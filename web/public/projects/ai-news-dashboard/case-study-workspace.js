@@ -66,7 +66,7 @@
   $('.snapshot .metric-strip').innerHTML = `
     <a class="summary-stat" href="#materials"><strong>100<span>+</span></strong><span>推广内容<small>产品介绍 / 教程 / 场景案例</small></span>${icon('arrow-up-right')}</a>
     <a class="summary-stat" href="#results"><strong>+50<span>%</span></strong><span>新增注册<small>投放期较前一周</small></span>${icon('arrow-up-right')}</a>
-    <a class="summary-stat" href="#research"><strong><small>约</small>+15<span>%</span></strong><span>首发专题创建率<small>相对提升 · 期间整体结果</small></span>${icon('arrow-up-right')}</a>`;
+    <a class="summary-stat" href="#research"><strong><small>约</small>+15<span>%</span></strong><span>首次专题创建率<small>相对提升 · 期间整体结果</small></span>${icon('arrow-up-right')}</a>`;
   $('h1').textContent = 'AI 产品';
   $('h1').insertAdjacentHTML('afterend', '<p class="project-subtitle">市场支持与运营复盘</p>');
   $('#overview .kicker').textContent = '01 / NEEDS & CUSTOMER COMMUNICATION';
@@ -297,7 +297,7 @@
   chartTabs.className = 'chart-tabs';
   chartTabs.setAttribute('role', 'tablist');
   chartTabs.setAttribute('aria-label', '复盘指标');
-  chartTabs.innerHTML = '<button type="button" role="tab" id="chart-registration" aria-controls="chart-0" aria-selected="true">新增注册 <strong>+50%</strong></button><button type="button" role="tab" id="chart-activation" aria-controls="chart-1" aria-selected="false" tabindex="-1">首发专题创建率 <strong>约 +15%</strong></button>';
+  chartTabs.innerHTML = '<button type="button" role="tab" id="chart-registration" aria-controls="chart-0" aria-selected="true">新增注册 <strong>+50%</strong></button><button type="button" role="tab" id="chart-activation" aria-controls="chart-1" aria-selected="false" tabindex="-1">首次专题创建率 <strong>约 +15%</strong></button>';
   $('.result-charts').before(chartTabs);
   const charts = $$('.result-chart');
   charts.forEach((chart, index) => {
