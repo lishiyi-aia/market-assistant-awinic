@@ -17,12 +17,12 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-inline: auto;
 }
-.project-education .companion-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+:is(.project-education, .project-partnership) .companion-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .companion-case .summary-stat { padding-block: 19px; gap: 17px; }
 .companion-case .summary-stat > strong { font-size: 34px; }
-.project-education .summary-stat { padding-inline: 20px; }
-.project-education .summary-stat:first-child { padding-left: 0; }
-.project-education .summary-stat > strong { font-size: 29px; }
+:is(.project-education, .project-partnership) .summary-stat { padding-inline: 20px; }
+:is(.project-education, .project-partnership) .summary-stat:first-child { padding-left: 0; }
+:is(.project-education, .project-partnership) .summary-stat > strong { font-size: 29px; }
 .companion-case .summary-stat:nth-child(4) > strong { color: #a33d63; }
 .companion-case .disclosure { border-bottom-color: #e4d7ad; background: #fbf4df; color: #6c5220; }
 .companion-case .disclosure-inner { grid-template-columns: 150px minmax(0, 1fr); gap: 30px; padding-block: 14px; }
@@ -187,8 +187,8 @@
   .companion-case .hero-meta { position: static; }
   .companion-case .summary-stat { gap: 12px; padding-inline: 18px; }
   .companion-case .summary-stat > strong { font-size: 28px; }
-  .project-education .summary-stat { display: block; }
-  .project-education .summary-stat > strong { display: block; min-height: 40px; }
+  :is(.project-education, .project-partnership) .summary-stat { display: block; }
+  :is(.project-education, .project-partnership) .summary-stat > strong { display: block; min-height: 40px; }
   .research-body { grid-template-columns: minmax(0, 1fr); gap: 25px; }
   .research-body .project-explorer { grid-template-columns: 155px minmax(0, 1fr); }
   .research-product { grid-template-columns: 150px minmax(0, 1fr); gap: 25px; align-items: center; }
@@ -229,14 +229,14 @@
   .companion-case .summary-stat > strong { display: block; font-size: 25px; min-height: 38px; }
   .companion-case .summary-stat > span { font-size: 10px; }
   .companion-case .summary-stat > span small { font-size: 9px; }
-  .project-education .companion-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .project-education .summary-stat { padding: 13px 12px; display: flex; gap: 14px; }
-  .project-education .summary-stat:first-child { padding-left: 12px; }
-  .project-education .summary-stat:nth-child(2) { border-right: 0; }
-  .project-education .summary-stat:nth-child(n+3) { border-top: 1px solid var(--line); }
-  .project-education .summary-stat > strong { min-height: 0; font-size: 22px; }
-  .project-education .summary-stat > span { font-size: 10px; }
-  .project-education .summary-stat > span small { display: none; }
+  :is(.project-education, .project-partnership) .companion-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  :is(.project-education, .project-partnership) .summary-stat { padding: 13px 12px; display: flex; gap: 14px; }
+  :is(.project-education, .project-partnership) .summary-stat:first-child { padding-left: 12px; }
+  :is(.project-education, .project-partnership) .summary-stat:nth-child(2) { border-right: 0; }
+  :is(.project-education, .project-partnership) .summary-stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+  :is(.project-education, .project-partnership) .summary-stat > strong { flex: 0 0 3em; min-height: 0; font-size: 22px; }
+  :is(.project-education, .project-partnership) .summary-stat > span { min-width: 0; font-size: 10px; }
+  :is(.project-education, .project-partnership) .summary-stat > span small { display: none; }
   .companion-case .disclosure-inner { gap: 5px; }
   .companion-case .disclosure strong { font-size: 11px; }
   .companion-case .disclosure p { font-size: 10px; }
@@ -310,9 +310,9 @@
 }
 @media (max-width: 360px) {
   .companion-case .summary-stat > strong { font-size: 22px; }
-  .project-education .summary-stat { gap: 8px; padding-inline: 8px; }
-  .project-education .summary-stat:first-child { padding-left: 8px; }
-  .project-education .summary-stat > strong { font-size: 21px; }
+  :is(.project-education, .project-partnership) .summary-stat { gap: 8px; padding-inline: 8px; }
+  :is(.project-education, .project-partnership) .summary-stat:first-child { padding-left: 8px; }
+  :is(.project-education, .project-partnership) .summary-stat > strong { font-size: 21px; }
   .research-product { grid-template-columns: 115px minmax(0, 1fr); }
   .result-metrics strong { font-size: 21px; }
   .explorer-rows > div { grid-template-columns: 58px minmax(0, 1fr); gap: 10px; }
