@@ -167,13 +167,39 @@ export default function Works({ lang, innerRef }: { lang: 'en' | 'zh'; innerRef:
     }
   }, [count, lang])
 
+  // A case's directory link returns directly to its card in the pinned gallery.
+  useEffect(() => {
+    const restoreProject = () => {
+      const match = /^#projects(?:\/([a-z0-9-]+))?$/.exec(window.location.hash)
+      if (!match) return
+      const index = match[1] ? sections.findIndex((section) => section.items?.some((item) => item.slug === match[1])) : 0
+      const gallery = galleryRef.current
+      const track = trackRef.current
+      if (index < 0 || !gallery || !track) return
+      const card = track.children[index] as HTMLElement
+      if (window.matchMedia('(max-width: 640px)').matches) {
+        card.scrollIntoView({ behavior: 'instant', block: 'start' })
+        return
+      }
+      if (!scrollRange) return
+      const distance = Math.min(scrollRange, Math.max(0, card.offsetLeft))
+      window.scrollTo({ top: window.scrollY + gallery.getBoundingClientRect().top + distance, behavior: 'instant' })
+    }
+    const frame = requestAnimationFrame(restoreProject)
+    window.addEventListener('hashchange', restoreProject)
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('hashchange', restoreProject)
+    }
+  }, [scrollRange, sections])
+
   // px 数值插值（比 vw 字符串更顺）；竖滚行程与横移 1:1
   const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange])
   // 横移到底时「继续下滑」提示渐隐
   const hintOpacity = useTransform(scrollYProgress, [0.85, 1], [1, 0])
 
   return (
-    <section className="works" lang={lang} ref={innerRef}>
+    <section id="projects" className="works" lang={lang} ref={innerRef}>
       <div
         className="wk-gallery"
         ref={galleryRef}
