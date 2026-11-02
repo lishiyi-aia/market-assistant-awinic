@@ -131,14 +131,17 @@ canvas {
   font-weight: 500;
   line-height: 22px;
   letter-spacing: 0;
-  color: rgba(255, 255, 255, 0.82);
+  color: #183326;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  text-shadow: none;
   pointer-events: none;
 }
 
 .scroll-cue-label {
   max-width: 100%;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .scroll-cue-arrow {
@@ -214,17 +217,17 @@ canvas {
 /* 角标元数据小字 */
 .hero-meta {
   position: absolute;
-  font-size: clamp(9px, 0.9vw, 11px);
+  font-size: clamp(11px, 0.9vw, 13px);
   letter-spacing: 0.26em;
   text-transform: uppercase;
   line-height: 1.6;
-  color: rgba(244, 241, 234, 0.46);
+  color: #263c2e;
 }
 .hero-meta .hm-name {
   display: block;
   text-transform: none;
   letter-spacing: 0.12em;
-  color: rgba(244, 241, 234, 0.7);
+  color: #183326;
 }
 .hm-tl {
   top: calc(var(--m) + 16px);
@@ -304,9 +307,14 @@ canvas {
 .about[lang='zh'] .about-body {
   font-family: 'Chiron GoRound TC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-weight: 400;
-  font-size: clamp(8.8px, 0.92vw, 12.8px);
+  font-size: clamp(12px, 1vw, 14px);
   line-height: 1.7;
   letter-spacing: 0.02em;
+  color: #183326;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(24, 51, 38, 0.12);
+  border-radius: 12px;
+  padding: 10px 14px;
 }
 
 /* ---------- 右上角中英切换 ---------- */

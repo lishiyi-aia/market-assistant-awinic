@@ -4,7 +4,6 @@ import { Canvas } from '@react-three/fiber'
 import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion'
 import * as THREE from 'three'
 import Scene from './scene/Scene'
-import NoiseOverlay from './ui/NoiseOverlay'
 import Resume from './ui/Resume'
 import Works from './ui/Works'
 import LoadingScreen from './ui/LoadingScreen'
@@ -75,7 +74,7 @@ function Hero({ lang, cueOpacity }: { lang: Lang; cueOpacity: MotionValue<number
         </div>
       </motion.div>
       <div className="scroll-cue-space" aria-hidden="true" />
-      {/* Keep the hint above the film grain without changing the other content layers. */}
+      {/* Keep the scroll hint above the page content. */}
       {createPortal(
         <motion.div className="scroll-cue" style={{ opacity: cueOpacity }} aria-hidden="true">
           <span className="scroll-cue-label">
@@ -133,7 +132,7 @@ export default function App() {
       <div className="scene-bg">
         <Canvas
           shadows={{ type: THREE.PCFShadowMap }}
-          dpr={[1, 1.5]}
+          dpr={[1, 2]}
           camera={{ position: [0, 5, 19], fov: 39, near: 0.1, far: 500 }}
           gl={{ antialias: false, stencil: false, depth: true, toneMapping: THREE.ACESFilmicToneMapping }}
         >
@@ -183,9 +182,6 @@ export default function App() {
         <div className="hero-meta hm-bl">Cross-team Coordination · AI Dashboards · Workflow Improvement</div>
         <div className="hero-meta hm-right">Market Assistant · Awinic</div>
       </motion.div>
-
-      {/* 全屏胶片噪点蒙层（multiply 混合） */}
-      <NoiseOverlay />
 
       {/* 可滚动内容 */}
       <main className="content">
